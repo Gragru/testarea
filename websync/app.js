@@ -26,4 +26,4 @@ function srvTime(){
 }
 
 var st = srvTime();
-var date = new Date(st);
+var serverDate = new Date(st);
