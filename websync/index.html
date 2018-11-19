@@ -4,14 +4,39 @@
     <title>Server date/time</title>
     <script language="javascript" src="app.js"></script>
   </head>
-  <body>
+  <body onload="setInterval(display(), 2000)">
+    <div id="data"></div>
+
+
+
 
   <script language="javascript">
     var localTime = new Date();
     var diff = (localTime - serverDate);
-    document.write("Local machine time is: " + localTime + "<br>");
-    document.write("Server time is: " + serverDate + "<br>");
-    document.write("Diff: " + diff);
+    // document.getElementById("data").innerHTML = ("Local machine time is: " + localTime + "<br>");
+    // document.write("Server time is: " + serverDate + "<br>");
+    // document.write("Diff: " + diff);
+    // document.write("Local machine time is: " + localTime + diff + "<br>");
+
+    display(diff);
+    //var myVar = setTimeout(display(), diff);
+    
+    var swap = 1;
+
+    function display()
+    {
+      if(swap == 1)
+      {
+        document.body.style.backgroundColor = "rgb(255, 255, 255)";
+      }
+      else
+      {
+        document.body.style.backgroundColor = "rgb(255, 0, 0)";
+      }
+      //document.write(document.body.style.backgroundColor);
+      swap = 1- swap;
+      //var myVar2 = setTimeout(display(), 5000 + diff);
+    }
 
     
 
